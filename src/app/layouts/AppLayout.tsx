@@ -6,17 +6,13 @@ import {
   withStyles
 } from '@material-ui/core';
 
-import Analytics from 'app/views/dashboard/Analytics';
 import { IAppLayoutSettings } from './settings';
 import LayoutSidenav from './nav/LayoutSidenav';
 import LayoutTopbar from './nav/LayoutTopbar';
-import MatxSuspense from 'razzle/components/MatxSuspense/MatxSuspense';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import clx from 'classnames';
 import { connect } from 'react-redux';
-import { renderRoutes } from 'react-router-config';
-import routes from '../RootRoutes';
 
 const styles = (theme: Theme) => {
   return {
@@ -50,11 +46,7 @@ const AppLayout: React.FC<Props> = (props) => {
           <ThemeProvider theme={topbarTheme}>
             <LayoutTopbar />
           </ThemeProvider>
-          <div className="content">
-            {/* <Analytics /> */}
-            content
-            {/* {renderRoutes(routes)} */}
-          </div>
+          <div className="content">content</div>
         </Scrollbar>
       </div>
     </div>

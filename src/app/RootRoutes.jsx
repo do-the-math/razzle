@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import dashboardRoutes from './views/dashboard/DashboardRoutes';
 
 const redirectRoute = [
   {
@@ -16,6 +15,6 @@ const errorRoute = [
   }
 ];
 
-const routes = [...dashboardRoutes];
+const routes = [...redirectRoute];
 
 export default routes;
