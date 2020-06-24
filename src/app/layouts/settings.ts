@@ -8,16 +8,18 @@ function createMatxThemes() {
   let themes: any = {};
 
   Lodash.forEach(themeColors, (value, key) => {
-    const _themeOption: ThemeOptions = Lodash.merge(themeOptions, value);
+    const _themeOption: ThemeOptions = Lodash.merge({}, themeOptions, value);
     themes[key] = createMuiTheme(_themeOption);
   });
+
   return themes;
 }
+
 const themes = createMatxThemes();
 
 const AppLayoutSettings = {
   activeLayout: 'layout1',
-  activeTheme: 'white', // View all valid theme colors inside MatxTheme/themeColors.js
+  activeTheme: 'purple1', // View all valid theme colors inside MatxTheme/themeColors.js
   perfectScrollbar: true,
 
   themes: themes,
@@ -25,7 +27,7 @@ const AppLayoutSettings = {
   topbar: {
     show: true,
     fixed: true,
-    theme: 'purple1' // View all valid theme colors inside MatxTheme/themeColors.js
+    theme: 'purpleDark1' // View all valid theme colors inside MatxTheme/themeColors.js
   },
 
   leftSidebar: {

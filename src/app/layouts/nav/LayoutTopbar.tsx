@@ -1,6 +1,7 @@
 import {
   Icon,
   IconButton,
+  MenuItem,
   Theme,
   WithStyles,
   withStyles
@@ -8,6 +9,9 @@ import {
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import { IAppLayoutSettings } from '../settings';
+import { Link } from 'react-router-dom';
+import { MatxMenu } from 'razzle';
+import MatxSearchBox from 'razzle/components/MatxSearchBox';
 import React from 'react';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import { connect } from 'react-redux';
@@ -57,7 +61,7 @@ const LayoutTopbar: React.FC<Props> = (props) => {
       <div className="topbar-hold fixed">
         <div className="flex justify-between items-center h-full">
           <div className="flex">
-            <IconButton onClick={handleSidebarToggle} className="hide-on-pc">
+            <IconButton onClick={handleSidebarToggle}>
               <Icon>menu</Icon>
             </IconButton>
 
@@ -74,6 +78,38 @@ const LayoutTopbar: React.FC<Props> = (props) => {
                 <Icon>star_outline</Icon>
               </IconButton>
             </div>
+          </div>
+          <div className="flex items-center">
+            <MatxSearchBox />
+
+            <MatxMenu
+              menuButton={
+                <img
+                  className="mx-2 align-middle circular-image-small cursor-pointer"
+                  src="/assets/images/faces/2.jpg"
+                  alt="user"
+                />
+              }
+            >
+              <MenuItem>
+                <Link className={classes.menuItem} to="/">
+                  <Icon> home </Icon>
+                  <span className="pl-4"> Home </span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Icon> person </Icon>
+                <span className="pl-4"> Profile </span>
+              </MenuItem>
+              <MenuItem className={classes.menuItem}>
+                <Icon> settings </Icon>
+                <span className="pl-4"> Settings </span>
+              </MenuItem>
+              <MenuItem className={classes.menuItem}>
+                <Icon> power_settings_new </Icon>
+                <span className="pl-4"> Logout </span>
+              </MenuItem>
+            </MatxMenu>
           </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
+import { Icon, Switch, Theme, ThemeProvider } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import { Switch, Theme, ThemeProvider } from '@material-ui/core';
 
 import Brand from '../shared/brand/Brand';
 import { IAppLayoutSettings } from '../settings';
+import MatxVerticalNav from 'razzle/components/MatxVerticalNav/MatxVerticalNav';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import SidenavThemeStyles from '../theme/sidenavTheme/SidenavThemeStyles';
 import { connect } from 'react-redux';
+import { navigations } from '../Navigations';
 import { setLayoutSettings } from 'app/redux/actions/LayoutActions';
 
 interface Props {
@@ -33,7 +35,7 @@ const LayoutSidenav: React.FC<Props> = (props) => {
 
   const renderUser = () => {
     let user = {
-      photoURL: '/assets/images/face-6.jpg',
+      photoURL: '/assets/images/faces/2.jpg',
       displayName: 'aman'
     };
     return (
@@ -42,12 +44,9 @@ const LayoutSidenav: React.FC<Props> = (props) => {
           <img src={user.photoURL} alt="user" />
         </div>
         <div className="ml-4">
-          <span className="username">
-            {/* <Icon>lock</Icon> */}
-            {user.displayName}
-          </span>
-          {/* <div className="user__menu">
-            <MatxMenu
+          <span className="username">{user.displayName}</span>
+          <div className="user__menu">
+            {/* <MatxMenu
               menuButton={
                 <Tooltip title="Settings">
                   <IconButtonWhite
@@ -85,8 +84,8 @@ const LayoutSidenav: React.FC<Props> = (props) => {
                 <IconSmall>exit_to_app</IconSmall>
               </IconButtonWhite>
             </Tooltip>
+           */}
           </div>
-        */}
         </div>
       </div>
     );
@@ -111,7 +110,7 @@ const LayoutSidenav: React.FC<Props> = (props) => {
                     className="scrollable ps position-relative"
                   >
                     {renderUser()}
-                    {/* <MatxVerticalNav navigation={navigations} /> */}
+                    <MatxVerticalNav navigations={navigations} />
                   </Scrollbar>
                   {renderOverlay()}
                 </React.Fragment>

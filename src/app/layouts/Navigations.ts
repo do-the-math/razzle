@@ -20,7 +20,11 @@ export const navigations = [
       }
     ]
   },
-
+  {
+    name: 'Drag and Drop',
+    icon: 'control_camera',
+    path: '/others/drag-and-drop'
+  },
   {
     name: 'Multilevel',
     icon: 'trending_up',
@@ -182,48 +186,6 @@ export const navigations = [
         iconText: 'T'
       }
     ]
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
-  },
-
-  {
-    name: 'Map',
-    icon: 'add_location',
-    path: '/map'
   },
 
   {
