@@ -5,13 +5,24 @@ import React from 'react';
 const styles = (theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
-    color: 'white',
+    color: theme.palette.text.primary,
     '& .sidenav': {
       '& .sidenav__hold': {
         opacity: '1 !important',
         '&::after': {
           background: theme.palette.primary.main,
           opacity: 0.96
+        },
+        '& .nav-item:not(.badge)': {
+          color: theme.palette.text.primary
+        },
+        '& .nav-item': {
+          '&.active, &.active:hover': {
+            background: theme.palette.secondary.main
+          },
+          '& .icon-text::after': {
+            background: theme.palette.text.primary
+          }
         }
       }
     }

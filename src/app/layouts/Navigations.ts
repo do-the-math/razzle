@@ -21,9 +21,9 @@ export const navigations = [
     ]
   },
   {
-    name: 'Drag and Drop',
-    icon: 'control_camera',
-    path: '/others/drag-and-drop'
+    name: 'Todo',
+    icon: 'format_list_bulleted',
+    path: '/todos'
   },
   {
     name: 'Multilevel',
@@ -54,32 +54,6 @@ export const navigations = [
             iconText: '4'
           }
         ]
-      }
-    ]
-  },
-  {
-    name: 'Utilities',
-    icon: 'format_list_bulleted',
-    children: [
-      {
-        name: 'Color',
-        path: '/utilities/color',
-        iconText: 'C'
-      },
-      {
-        name: 'Spacing',
-        path: '/utilities/spacing',
-        iconText: 'S'
-      },
-      {
-        name: 'Typography',
-        path: '/utilities/typography',
-        iconText: 'T'
-      },
-      {
-        name: 'Display',
-        path: '/utilities/display',
-        iconText: 'D'
       }
     ]
   },
