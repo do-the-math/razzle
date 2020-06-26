@@ -99,7 +99,12 @@ const LayoutSidenav: React.FC<Props> = (props) => {
     <ThemeProvider theme={sidebarTheme}>
       <SidenavThemeStyles>
         <div className="sidenav">
-          <div className="sidenav__hold">
+          <div
+            className="sidenav__hold"
+            style={{
+              backgroundImage: `url(${settings.leftSidebar.bgImgURL})`
+            }}
+          >
             {settings.leftSidebar.show && (
               <React.Fragment>
                 <Brand onLogoClick={handleSidenavToggle}></Brand>
