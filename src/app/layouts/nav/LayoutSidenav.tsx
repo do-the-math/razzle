@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import Brand from '../shared/brand/Brand';
 import { IAppLayoutSettings } from '../settings';
-import MatxVerticalNav from 'razzle/components/MatxVerticalNav/MatxVerticalNav';
+import { MatxVerticalNav } from 'matx';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import SidenavThemeStyles from '../theme/sidenavTheme/SidenavThemeStyles';
@@ -45,47 +45,7 @@ const LayoutSidenav: React.FC<Props> = (props) => {
         </div>
         <div className="ml-4">
           <span className="username">{user.displayName}</span>
-          <div className="user__menu">
-            {/* <MatxMenu
-              menuButton={
-                <Tooltip title="Settings">
-                  <IconButtonWhite
-                    aria-label="Delete"
-                    className=""
-                    size="small"
-                  >
-                    <IconSmall> settings </IconSmall>
-                  </IconButtonWhite>
-                </Tooltip>
-              }
-            >
-              <MenuItem className="flex items-center">
-                <Icon> home </Icon>
-                <span className="pl-4"> Home </span>
-              </MenuItem>
-              <MenuItem className="flex items-center">
-                <Icon> settings </Icon>
-                <span className="pl-4"> Account Setting </span>
-              </MenuItem>
-            </MatxMenu>
-
-            <Tooltip title="Profile">
-              <IconButtonWhite aria-label="Delete" className="" size="small">
-                <IconSmall>person</IconSmall>
-              </IconButtonWhite>
-            </Tooltip>
-            <Tooltip title="Sign out">
-              <IconButtonWhite
-                aria-label="Delete"
-                className=""
-                size="small"
-                // onClick={this.handleSignOut}
-              >
-                <IconSmall>exit_to_app</IconSmall>
-              </IconButtonWhite>
-            </Tooltip>
-           */}
-          </div>
+          <div className="user__menu">{/* {"fsdf"} */}</div>
         </div>
       </div>
     );

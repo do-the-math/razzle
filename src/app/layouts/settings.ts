@@ -4,7 +4,7 @@ import Lodash from 'lodash';
 import { themeColors } from './theme/themeColors';
 import themeOptions from './theme/themeOptions';
 
-function createMatxThemes() {
+function createAppThemes() {
   let themes: any = {};
 
   Lodash.forEach(themeColors, (value, key) => {
@@ -15,11 +15,11 @@ function createMatxThemes() {
   return themes;
 }
 
-const themes = createMatxThemes();
+const themes = createAppThemes();
 
 const AppLayoutSettings = {
   activeLayout: 'layout1',
-  activeTheme: 'purple1', // View all valid theme colors inside MatxTheme/themeColors.js
+  activeTheme: 'purple1', // View all valid theme colors inside themeColors.js
   perfectScrollbar: true,
 
   themes: themes,
@@ -27,13 +27,13 @@ const AppLayoutSettings = {
   topbar: {
     show: true,
     fixed: true,
-    theme: 'purpleDark1' // View all valid theme colors inside MatxTheme/themeColors.js
+    theme: 'purpleDark1' // View all valid theme colors inside themeColors.js
   },
 
   leftSidebar: {
     show: true,
     mode: 'close', // full, close, compact, mobile,
-    theme: 'slateDark1', // View all valid theme colors inside MatxTheme/themeColors.js
+    theme: 'slateDark1', // View all valid theme colors inside themeColors.js
     // bgOpacity: .96, // 0 ~ 1
     bgImgURL: '/assets/images/sidebar/sidebar-bg-dark.jpg'
   },
@@ -41,13 +41,13 @@ const AppLayoutSettings = {
   secondarySidebar: {
     show: true,
     open: true,
-    theme: 'purple1' // View all valid theme colors inside MatxTheme/themeColors.js
+    theme: 'purple1' // View all valid theme colors inside themeColors.js
   },
 
   footer: {
     show: true,
     fixed: false,
-    theme: 'purple1' // View all valid theme colors inside MatxTheme/themeColors.js
+    theme: 'purple1' // View all valid theme colors inside themeColors.js
   }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import todoRoutes from './views/todos/TodoRoutes';
 
 const redirectRoute = [
   {
@@ -15,6 +16,6 @@ const errorRoute = [
   }
 ];
 
-const routes = [...redirectRoute];
+const routes = [...todoRoutes, ...redirectRoute];
 
 export default routes;

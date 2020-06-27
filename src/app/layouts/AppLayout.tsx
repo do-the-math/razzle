@@ -6,13 +6,16 @@ import {
   withStyles
 } from '@material-ui/core';
 
+import AppContext from 'app/AppContext';
 import { IAppLayoutSettings } from './settings';
 import LayoutSidenav from './nav/LayoutSidenav';
 import LayoutTopbar from './nav/LayoutTopbar';
+import MatxSuspense from 'matx/components/MatxSuspense/MatxSuspense';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import clx from 'classnames';
 import { connect } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
 
 const styles = (theme: Theme) => {
   return {
@@ -28,6 +31,7 @@ interface Props extends WithStyles<typeof styles> {
 }
 
 const AppLayout: React.FC<Props> = (props) => {
+  const { routes } = useContext(AppContext) as any;
   let { settings, classes, theme } = props;
 
   const topbarTheme: Theme = settings.themes[settings.topbar.theme];
@@ -46,7 +50,9 @@ const AppLayout: React.FC<Props> = (props) => {
           <ThemeProvider theme={topbarTheme}>
             <LayoutTopbar />
           </ThemeProvider>
-          <div className="content">content</div>
+          <div className="content">
+            <MatxSuspense>{renderRoutes(routes)}</MatxSuspense>
+          </div>
         </Scrollbar>
       </div>
     </div>

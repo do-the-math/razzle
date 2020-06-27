@@ -10,8 +10,8 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import { IAppLayoutSettings } from '../settings';
 import { Link } from 'react-router-dom';
-import { MatxMenu } from 'razzle';
-import MatxSearchBox from 'razzle/components/MatxSearchBox';
+import MatxMenu from 'matx/components/MatxMenu';
+import MatxSearchBox from 'matx/components/MatxSearchBox';
 import React from 'react';
 import { RootState } from 'app/redux/reducers/RootReducer';
 import { connect } from 'react-redux';

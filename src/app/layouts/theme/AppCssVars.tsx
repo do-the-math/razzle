@@ -55,8 +55,8 @@ const styles = (theme: Theme) => ({
 interface Props {
   children: any;
 }
-const MatxCssVars: React.FC<Props> = ({ children }) => {
+const AppCssVars: React.FC<Props> = ({ children }) => {
   return <React.Fragment>{children}</React.Fragment>;
 };
 
-export default withStyles(styles, { withTheme: true })(MatxCssVars);
+export default withStyles(styles, { withTheme: true })(AppCssVars);
