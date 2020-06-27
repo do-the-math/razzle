@@ -7,11 +7,11 @@ import {
 } from '@material-ui/core';
 
 import AppContext from 'app/AppContext';
+import { AppRootState } from 'app/redux/reducers/RootReducer';
 import { IAppLayoutSettings } from './settings';
 import LayoutSidenav from './nav/LayoutSidenav';
 import LayoutTopbar from './nav/LayoutTopbar';
 import MatxSuspense from 'matx/components/MatxSuspense/MatxSuspense';
-import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import clx from 'classnames';
 import { connect } from 'react-redux';
@@ -59,7 +59,7 @@ const AppLayout: React.FC<Props> = (props) => {
   );
 };
 
-const mapStateToProps = (state: RootState) => {
+const mapStateToProps = (state: AppRootState) => {
   return {
     settings: state.layout.settings
   };

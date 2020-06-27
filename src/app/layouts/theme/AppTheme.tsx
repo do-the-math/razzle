@@ -1,12 +1,12 @@
 import AppCssVars from './AppCssVars';
+import { AppRootState } from 'app/redux/reducers/RootReducer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import React from 'react';
-import { RootState } from 'app/redux/reducers/RootReducer';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 
 interface Props {
-  settings: RootState['layout']['settings'];
+  settings: AppRootState['layout']['settings'];
   children: any;
 }
 
@@ -23,7 +23,7 @@ const AppTheme: React.FC<Props> = ({ children, settings }) => {
   );
 };
 
-const mapStateToProps = (state: RootState) => ({
+const mapStateToProps = (state: AppRootState) => ({
   settings: state.layout.settings
 });
 

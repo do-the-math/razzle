@@ -1,10 +1,10 @@
 import { Icon, Switch, Theme, ThemeProvider } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
+import { AppRootState } from 'app/redux/reducers/RootReducer';
 import Brand from '../shared/brand/Brand';
 import { IAppLayoutSettings } from '../settings';
 import { MatxVerticalNav } from 'matx';
-import { RootState } from 'app/redux/reducers/RootReducer';
 import Scrollbar from 'react-perfect-scrollbar';
 import SidenavThemeStyles from '../theme/sidenavTheme/SidenavThemeStyles';
 import { connect } from 'react-redux';
@@ -88,7 +88,7 @@ const LayoutSidenav: React.FC<Props> = (props) => {
   );
 };
 
-const mapStateToProps = (state: RootState) => {
+const mapStateToProps = (state: AppRootState) => {
   return {
     settings: state.layout.settings
   };
