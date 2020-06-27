@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 interface Props {
   settings: AppRootState['layout']['settings'];
-  children: any;
+  children: React.ReactNode;
 }
 
 const AppTheme: React.FC<Props> = ({ children, settings }) => {

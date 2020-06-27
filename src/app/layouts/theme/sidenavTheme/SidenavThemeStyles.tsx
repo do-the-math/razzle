@@ -30,7 +30,7 @@ const styles = (theme: Theme) => ({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  children: any;
+  children: React.ReactNode;
 }
 
 const SidenavThemeStyles: React.FC<Props> = ({ children, classes }) => {

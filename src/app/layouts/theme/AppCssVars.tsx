@@ -53,7 +53,7 @@ const styles = (theme: Theme) => ({
 });
 
 interface Props {
-  children: any;
+  children: React.ReactNode;
 }
 const AppCssVars: React.FC<Props> = ({ children }) => {
   return <React.Fragment>{children}</React.Fragment>;
