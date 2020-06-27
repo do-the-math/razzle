@@ -1,8 +1,9 @@
-import { Theme, WithStyles } from '@material-ui/core';
+import { Theme, WithStyles, withStyles } from '@material-ui/core';
 
 import { AppRootState } from 'app/redux/reducers/RootReducer';
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const styles = (theme: Theme) => {
   return {};
@@ -10,8 +11,8 @@ const styles = (theme: Theme) => {
 
 interface Props extends WithStyles<typeof styles>, RouteComponentProps<any> {}
 
-const Todo: React.FC<Props> = (props) => {
-  return <div>todo</div>;
+const Todos: React.FC<Props> = (props) => {
+  return <React.Fragment>sdf</React.Fragment>;
 };
 
 const mapStateToProps = (state: AppRootState) => ({
@@ -20,4 +21,7 @@ const mapStateToProps = (state: AppRootState) => ({
 
 const mapDispatchToProps = {};
 
-export default Todo;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles, { withTheme: true })(Todos));
