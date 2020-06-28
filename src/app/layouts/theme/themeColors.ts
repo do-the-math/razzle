@@ -150,16 +150,21 @@ export const themeColors = {
       }
     }
   },
-  red: {
+  darkBlue: {
     palette: {
       type: 'dark',
       primary: {
-        main: '#e53935',
+        main: '#4050B5',
         contrastText: '#ffffff'
       },
       secondary: {
-        main: '#FFAF38',
-        contrastText: textLight.primary
+        main: '#FF4F30',
+        contrastText: '#ffffff'
+      },
+      text: textLight,
+      background: {
+        paper: 'white',
+        default: 'white'
       }
     }
   }

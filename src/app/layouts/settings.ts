@@ -17,9 +17,11 @@ function createAppThemes() {
 
 const themes = createAppThemes();
 
+const activeTheme = 'darkBlue';
+
 const AppLayoutSettings = {
   activeLayout: 'layout1',
-  activeTheme: 'purple1', // View all valid theme colors inside themeColors.js
+  activeTheme: activeTheme, // View all valid theme colors inside themeColors.js
   perfectScrollbar: true,
 
   themes: themes,
@@ -27,7 +29,7 @@ const AppLayoutSettings = {
   topbar: {
     show: true,
     fixed: true,
-    theme: 'purpleDark1' // View all valid theme colors inside themeColors.js
+    theme: activeTheme // View all valid theme colors inside themeColors.js
   },
 
   leftSidebar: {

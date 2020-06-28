@@ -101,6 +101,14 @@ const themeOptions: ThemeOptions = {
       root: {
         color: 'white'
       }
+    },
+    MuiListItem: {
+      container: {
+        height: '100%'
+      },
+      root: {
+        height: '100%'
+      }
     }
   }
 };

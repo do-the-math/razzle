@@ -1,3 +1,74 @@
 .todos {
-    background-color: red;
+  background-color: var(--primary);
+
+  .todos__title {
+    position: relative;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .todos__content {
+    height: calc(100vh - 174px);
+    background-color: white;
+    border-top-left-radius: 50px;
+  }
 }
+
+.todo-list {
+  padding-top: 30px;
+}
+
+.todo-item-container {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  // background-color: yellow;
+  display: flex;
+  flex-direction: row;
+
+  .todo-item-time {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    transform: translateX(-15px) rotate(-90deg);
+
+    span {
+      color: var(--text-hint);
+      // height: 50px;
+      // width: 10%;
+      // padding: 0px;
+      // transform: rotate(-90deg);
+    }
+  }
+  .todo-item-main {
+    width: 100%;
+    margin-left: 40px;
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .checkbox {
+      width: 50px;
+    }
+    .card1 {
+      display: flex;
+      width: calc(100% - 100px);
+      // color: inherit;
+      // font-size: 19px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: var(--primary);
+      box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+//
