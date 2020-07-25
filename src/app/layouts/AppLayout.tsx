@@ -8,9 +8,9 @@ import {
 
 import AppContext from 'app/AppContext';
 import { AppRootState } from 'app/redux/reducers/RootReducer';
-import { IAppLayoutSettings } from './settings';
+import { IAppLayoutSettings } from './AppLayoutSettings';
 import LayoutSidenav from './nav/LayoutSidenav';
-import LayoutTopbar from './nav/LayoutTopbar';
+import LayoutTopnav from './nav/LayoutTopnav';
 import MatxSuspense from 'matx/components/MatxSuspense/MatxSuspense';
 import Scrollbar from 'react-perfect-scrollbar';
 import clx from 'classnames';
@@ -48,7 +48,7 @@ const AppLayout: React.FC<Props> = (props) => {
       <div className="content-wrap position-relative">
         <Scrollbar className="scrollable-content">
           <ThemeProvider theme={topbarTheme}>
-            <LayoutTopbar />
+            <LayoutTopnav />
           </ThemeProvider>
           <div className="content">
             <MatxSuspense>{renderRoutes(routes)}</MatxSuspense>

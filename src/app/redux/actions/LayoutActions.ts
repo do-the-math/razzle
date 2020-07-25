@@ -1,7 +1,7 @@
 import thunk, { ThunkDispatch } from 'redux-thunk';
 
 import { AppRootState } from '../reducers/RootReducer';
-import { IAppLayoutSettings } from 'app/layouts/settings';
+import { IAppLayoutSettings } from 'app/layouts/AppLayoutSettings';
 
 export const SET_LAYOUT_SETTINGS = 'LAYOUT_SET_SETTINGS';
 export const SET_DEFAULT_LAYOUT_SETTINGS = 'LAYOUT_SET_DEFAULT_SETTINGS';

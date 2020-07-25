@@ -4,7 +4,7 @@ import {
   SET_LAYOUT_SETTINGS
 } from '../actions/LayoutActions';
 
-import AppLayoutSettings from '../../layouts/settings';
+import AppLayoutSettings from '../../layouts/AppLayoutSettings';
 
 const initialState = {
   settings: {

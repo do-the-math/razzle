@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { AppRootState } from 'app/redux/reducers/RootReducer';
 import Brand from '../shared/brand/Brand';
-import { IAppLayoutSettings } from '../settings';
+import { IAppLayoutSettings } from '../AppLayoutSettings';
 import { MatxVerticalNav } from 'matx';
 import Scrollbar from 'react-perfect-scrollbar';
 import SidenavThemeStyles from '../theme/sidenavTheme/SidenavThemeStyles';
