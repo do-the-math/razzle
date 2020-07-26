@@ -54,6 +54,11 @@ export const navigations = [
     path: '/map'
   },
   {
+    name: 'Canvas',
+    icon: 'brush',
+    path: '/canvas'
+  },
+  {
     name: 'Settings',
     icon: 'settings',
     path: '/settings'

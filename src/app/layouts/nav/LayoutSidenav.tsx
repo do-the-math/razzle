@@ -62,7 +62,9 @@ const LayoutSidenav: React.FC<Props> = (props) => {
           <div
             className="sidenav__hold"
             style={{
-              backgroundImage: `url(${settings.leftSidebar.bgImgURL})`
+              backgroundImage: `url(${
+                window.location.origin + settings.leftSidebar.bgImgURL
+              })`
             }}
           >
             {settings.leftSidebar.show && (
