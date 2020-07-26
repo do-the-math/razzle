@@ -9,7 +9,7 @@ import {
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import { AppRootState } from 'app/redux/reducers/RootReducer';
-import { IAppLayoutSettings } from '../settings';
+import { IAppLayoutSettings } from '../AppLayoutSettings';
 import { Link } from 'react-router-dom';
 import MatxMenu from 'matx/components/MatxMenu';
 import MatxSearchBox from 'matx/components/MatxSearchBox';
@@ -41,7 +41,7 @@ interface Props extends WithStyles<typeof styles>, RouteComponentProps<any> {
   setLayoutSettings: any;
 }
 
-const LayoutTopbar: React.FC<Props> = (props) => {
+const LayoutTopnav: React.FC<Props> = (props) => {
   const { classes, settings, setLayoutSettings } = props;
 
   const updateSidebarMode = (mode: string) => {
@@ -126,5 +126,5 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  withRouter(connect(mapStateToProps, mapDispatchToProps)(LayoutTopbar))
+  withRouter(connect(mapStateToProps, mapDispatchToProps)(LayoutTopnav))
 );

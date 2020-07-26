@@ -17,7 +17,7 @@ function createAppThemes() {
 
 const themes = createAppThemes();
 
-const activeTheme = 'darkBlue';
+const activeTheme = 'purple1';
 
 const AppLayoutSettings = {
   activeLayout: 'layout1',
