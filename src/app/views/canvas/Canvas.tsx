@@ -1,3 +1,4 @@
+import { Button, Grid } from '@material-ui/core';
 import { Layer, Line, Stage, Text } from 'react-konva';
 import React, {
   Component,
@@ -7,7 +8,6 @@ import React, {
   useState
 } from 'react';
 
-import { Grid } from '@material-ui/core';
 import Konva from 'konva';
 
 const Canvas = () => {
@@ -38,7 +38,7 @@ const Canvas = () => {
   let [lines, setLines] = useState<any>([]);
   let [drawing, setDrawing] = useState(false);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (e: any) => {
     setDrawing(true);
     console.log(drawing);
 
@@ -70,18 +70,34 @@ const Canvas = () => {
     setDrawing(false);
   };
 
+  const handleWheel = (e: any) => {
+    e.evt.preventDefault();
+
+    const stage = e.target.getStage();
+
+    console.log(stage);
+  };
+
   return (
     <React.Fragment>
       <div className="canvas">
         <div className="layer-ui-wrapper">
-          <div className="fixed-menu-container">
-            <div className="menu memu-top">Just start drawing</div>
+          <div className="fixed-menu-top-container">
+            <div className="tray">
+              <Button>sdf</Button>
+              <Button>sdf</Button>
+              <Button>sdf</Button>
+              <Button>sdf</Button>
+              <Button>sdf</Button>
+              <Button>sdf</Button>
+            </div>
           </div>
         </div>
         <div className="main" ref={myRef}>
           <Stage
             width={dimensions.width}
             height={dimensions.height}
+            onWheel={handleWheel}
             onContentMousedown={handleMouseDown}
             onContentMousemove={handleMouseMove}
             onContentMouseup={handleMouseUp}

@@ -15,15 +15,18 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    // background-color: transparent;
     // background-color: red;
 
-    .munu {
+    .fixed-menu-top-container {
       display: flex;
-    }
-
-    .menu-top {
       justify-content: center;
+
+      .tray {
+        background-color: green;
+        z-index: 10;
+        padding: 4px;
+      }
     }
   }
 }
