@@ -13,7 +13,10 @@ import Konva from 'konva';
 const Canvas = () => {
   let stageRef: any;
   const myRef = useRef<any>();
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight - 64
+  });
 
   useEffect(() => {
     const resizeListener = () => {
@@ -69,38 +72,31 @@ const Canvas = () => {
 
   return (
     <React.Fragment>
-      <div className="pb-7 pt-7 px-8 bg-primary">
-        <div className="card-title capitalize text-white text-white-secondary">
-          canvas
-        </div>
-      </div>
       <div className="canvas">
-        <Grid container spacing={0}>
-          <Grid item lg={2} md={2} sm={2} xs={12}>
-            <div className="toolbar">sdf</div>
-          </Grid>
-          <Grid item lg={10} md={10} sm={10} xs={12}>
-            <div className="main" ref={myRef}>
-              <Stage
-                width={dimensions.width}
-                height={dimensions.height}
-                onContentMousedown={handleMouseDown}
-                onContentMousemove={handleMouseMove}
-                onContentMouseup={handleMouseUp}
-                ref={(node) => {
-                  stageRef = node;
-                }}
-              >
-                <Layer>
-                  <Text text="Just start drawing" />
-                  {lines.map((line: any, i: any) => (
-                    <Line key={i} points={line} stroke="red" />
-                  ))}
-                </Layer>
-              </Stage>
-            </div>
-          </Grid>
-        </Grid>
+        <div className="layer-ui-wrapper">
+          <div className="fixed-menu-container">
+            <div className="menu memu-top">Just start drawing</div>
+          </div>
+        </div>
+        <div className="main" ref={myRef}>
+          <Stage
+            width={dimensions.width}
+            height={dimensions.height}
+            onContentMousedown={handleMouseDown}
+            onContentMousemove={handleMouseMove}
+            onContentMouseup={handleMouseUp}
+            ref={(node) => {
+              stageRef = node;
+            }}
+          >
+            <Layer>
+              {/* <Text text="Just start drawing" /> */}
+              {lines.map((line: any, i: any) => (
+                <Line key={i} points={line} stroke="red" />
+              ))}
+            </Layer>
+          </Stage>
+        </div>
       </div>
     </React.Fragment>
   );
