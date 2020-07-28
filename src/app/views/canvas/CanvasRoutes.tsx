@@ -1,10 +1,10 @@
 import React from 'react';
 
-const todosRoutes = [
+const canvasRoutes = [
   {
     path: '/canvas',
     component: React.lazy(() => import('./Canvas'))
   }
 ];
 
-export default todosRoutes;
+export default canvasRoutes;

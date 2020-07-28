@@ -59,6 +59,11 @@ export const navigations = [
     path: '/canvas'
   },
   {
+    name: 'Editor',
+    icon: 'editor',
+    path: '/editor'
+  },
+  {
     name: 'Settings',
     icon: 'settings',
     path: '/settings'
