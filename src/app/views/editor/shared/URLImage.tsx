@@ -10,7 +10,6 @@ const URLImage = ({ image, mainRef }: any) => {
   const [img]: any = useImage(image.src, 'Anonimus');
   const imageRef: any = React.useRef();
   const imageRef1: any = React.useRef();
-  // debugger
   console.log(img);
 
   let xScale = 1;

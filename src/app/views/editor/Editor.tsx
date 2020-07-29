@@ -1,21 +1,22 @@
-import { Image, Layer, Stage } from 'react-konva';
+import { Image, Stage } from 'react-konva';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from '@material-ui/core';
 import Konva from 'konva';
-import URLImage from './shared/URLImage';
+import { Image as TImage } from 'konva/types/shapes/Image';
+import getBluredImage from './shared/BluredImage';
+import getNormalImage from './shared/NormalImage';
 import imageList from './mock/images';
 import useImage from 'use-image';
 
 const Editor = () => {
   const dragUrl: any = React.useRef();
   const stageRef: any = React.useRef();
-  const [images, setImages] = React.useState<any>([]);
   const mainRef = useRef<any>();
 
   const [dimensions, setDimensions] = useState({
-    width: 0,
-    height: 0
+    width: window.innerWidth,
+    height: window.innerHeight
   });
 
   useEffect(() => {
@@ -35,6 +36,51 @@ const Editor = () => {
     };
   }, []);
 
+  const dropImageOnCanvas = async (e: any) => {
+    // register event position
+
+    stageRef.current.setPointersPositions(e);
+
+    let stage: Konva.Stage = stageRef.current;
+    var layer = new Konva.Layer();
+
+    // add first image layer
+    if (stage.getLayers().length === 0) {
+      stage.add(layer);
+      const bluredImage: TImage = await getBluredImage({
+        dragUrl,
+        layer,
+        mainRef
+      });
+      const newImage: TImage = await getNormalImage({
+        dragUrl,
+        layer,
+        mainRef
+      });
+
+      layer.add(bluredImage);
+      layer.add(newImage);
+      layer.draw();
+    } else {
+      stage.add(layer);
+      const newImage: TImage = await getNormalImage({
+        dragUrl,
+        layer,
+        mainRef
+      });
+
+      layer.add(newImage);
+      layer.draw();
+    }
+  };
+
+  const onImageDrop = (e: any) => {
+    e.preventDefault();
+
+    // add image
+    dropImageOnCanvas(e);
+  };
+
   return (
     <div className="editor">
       <div className="container">
@@ -44,10 +90,8 @@ const Editor = () => {
               <div className="img-container">
                 <img
                   alt="lion"
+                  key={e.id}
                   src={e.download_url}
-                  // src={
-                  //   'https://rawcdn.githack.com/konvajs/site/726e19d6304c580ad8fe40651bd56a27ba43fcb3/react-demos/filters/public/lion.png'
-                  // }
                   draggable="true"
                   onDragStart={(e: any) => {
                     dragUrl.current = e.target.src;
@@ -67,18 +111,7 @@ const Editor = () => {
           <div
             ref={mainRef}
             className="main-area"
-            onDrop={(e) => {
-              e.preventDefault();
-              // register event position
-              stageRef.current.setPointersPositions(e);
-              // add image
-              setImages([
-                {
-                  ...stageRef.current.getPointerPosition(),
-                  src: dragUrl.current
-                }
-              ]);
-            }}
+            onDrop={onImageDrop}
             onDragOver={(e) => e.preventDefault()}
           >
             <Stage
@@ -86,13 +119,7 @@ const Editor = () => {
               height={dimensions.height}
               style={{ border: '1px solid grey' }}
               ref={stageRef}
-            >
-              <Layer>
-                {images.map((image: any) => {
-                  return <URLImage image={image} mainRef={mainRef} />;
-                })}
-              </Layer>
-            </Stage>
+            ></Stage>
           </div>
         </div>
       </div>
