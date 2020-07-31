@@ -1,3 +1,4 @@
-const a = 4;
+import getBluredImage from './BluredImage';
+import getNormalImage from './NormalImage';
 
-export default a;
+export { getBluredImage, getNormalImage };

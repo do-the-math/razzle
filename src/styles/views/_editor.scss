@@ -46,6 +46,29 @@
       height: 517.7px;
       //   padding-bottom: 85%;
       background-color: white;
+
+      #menu {
+        display: none;
+        position: absolute;
+        width: 60px;
+        background-color: white;
+        box-shadow: 0 0 5px grey;
+        border-radius: 3px;
+      }
+
+      #menu button {
+        width: 100%;
+        background-color: rgb(255, 0, 0);
+        border: 2px bold solid yellow;
+        color: white;
+        border: none;
+        margin: 0;
+        padding: 10px;
+      }
+
+      #menu button:hover {
+        background-color: red;
+      }
     }
     .topbar-menu {
       padding: 16px;
@@ -70,8 +93,11 @@
         padding: 16px;
         height: 100%;
         min-width: 150px;
+        margin: 0px;
+
         img {
           padding: 0px;
+          height: 100%;
         }
       }
     }

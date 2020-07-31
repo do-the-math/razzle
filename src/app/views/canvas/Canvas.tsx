@@ -1,21 +1,21 @@
-import { Button, Grid } from '@material-ui/core';
-import { Layer, Line, Stage, Text } from 'react-konva';
+import { Button, Grid } from "@material-ui/core";
+import { Layer, Line, Stage, Text } from "react-konva";
 import React, {
   Component,
   useEffect,
   useLayoutEffect,
   useRef,
-  useState
-} from 'react';
+  useState,
+} from "react";
 
-import Konva from 'konva';
+import Konva from "konva";
 
 const Canvas = () => {
   let stageRef: any;
   const myRef = useRef<any>();
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
-    height: window.innerHeight - 64
+    height: window.innerHeight - 64,
   });
 
   useEffect(() => {
@@ -23,15 +23,15 @@ const Canvas = () => {
       if (myRef.current) {
         setDimensions({
           width: myRef.current.offsetWidth,
-          height: myRef.current.offsetHeight
+          height: myRef.current.offsetHeight,
         });
       }
     };
     resizeListener();
-    window.addEventListener('resize', resizeListener);
+    window.addEventListener("resize", resizeListener);
 
     return () => {
-      window.removeEventListener('resize', resizeListener);
+      window.removeEventListener("resize", resizeListener);
     };
   }, []);
 
@@ -84,12 +84,11 @@ const Canvas = () => {
         <div className="layer-ui-wrapper">
           <div className="fixed-menu-top-container">
             <div className="tray">
-              <Button>sdf</Button>
-              <Button>sdf</Button>
-              <Button>sdf</Button>
-              <Button>sdf</Button>
-              <Button>sdf</Button>
-              <Button>sdf</Button>
+              <Button>Button 1</Button>
+              <Button>Button 2</Button>
+              <Button>Button 3</Button>
+              <Button>Button 4</Button>
+              <Button>Button 5</Button>
             </div>
           </div>
         </div>
