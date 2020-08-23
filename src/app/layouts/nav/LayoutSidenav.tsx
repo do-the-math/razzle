@@ -8,7 +8,7 @@ import { MatxVerticalNav } from 'matx';
 import Scrollbar from 'react-perfect-scrollbar';
 import SidenavThemeStyles from '../theme/sidenavTheme/SidenavThemeStyles';
 import { connect } from 'react-redux';
-import { navigations } from '../Navigations';
+import { navigations } from './SidenavNavigations';
 import { setLayoutSettings } from 'app/redux/actions/LayoutActions';
 
 interface Props {
