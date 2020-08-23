@@ -1,5 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import canvasRoutes from './views/canvas/CanvasRoutes';
+import editorRoutes from './views/editor/EditorRoutes';
 import todosRoutes from './views/todos/TodosRoutes';
 
 const redirectRoute = [
@@ -16,6 +18,12 @@ const errorRoute = [
   }
 ];
 
-const routes = [...todosRoutes, ...redirectRoute];
+const routes = [
+  ...canvasRoutes,
+  ...editorRoutes,
+  ...todosRoutes,
+  ...errorRoute,
+  ...redirectRoute
+];
 
 export default routes;
